@@ -20,8 +20,8 @@ class Allocine
 
         // new algo to build the query
         $sed = date('Ymd');
-        $sig = urlencode(base64_encode(sha1($this->_secret_key.urldecode(http_build_query($params)).'&sed='.$sed, true)));
-        $query_url .= '?'.urldecode(http_build_query($params)).'&sed='.$sed.'&sig='.$sig;
+        $sig = urlencode(base64_encode(sha1($this->_secret_key.http_build_query($params).'&sed='.$sed, true)));
+        $query_url .= '?'.http_build_query($params).'&sed='.$sed.'&sig='.$sig;
 
         // do the request
         $ch = curl_init();
