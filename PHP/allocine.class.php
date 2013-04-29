@@ -6,11 +6,13 @@ class Allocine
     private $_partner_key;
     private $_secret_key;
     private $_user_agent = 'Dalvik/1.6.0 (Linux; U; Android 4.2.2; Nexus 4 Build/JDQ39E)';
+    private $_filter;
 
-    public function __construct($partner_key, $secret_key)
+    public function __construct($partner_key, $secret_key, $filter)
     {
         $this->_partner_key = $partner_key;
         $this->_secret_key = $secret_key;
+        $this->_filter = $filter;
     }
 
     private function _do_request($method, $params)
@@ -42,7 +44,7 @@ class Allocine
             'partner' => $this->_partner_key,
             'q' => $query,
             'format' => 'json',
-            'filter' => 'movie'
+            'filter' => $this->_filter
         );
 
         // do the request
@@ -58,13 +60,13 @@ class Allocine
             'partner' => $this->_partner_key,
             'code' => $id,
             'profile' => 'large',
-            'filter' => 'movie',
+            'filter' => $this->_filter,
             'striptags' => 'synopsis,synopsisshort',
             'format' => 'json',
         );
 
         // do the request
-        $response = $this->_do_request('movie', $params);
+        $response = $this->_do_request($this->_filter, $params);
 
         return $response;
     }
