@@ -8,7 +8,7 @@ namespace AlloCine
         [DataMember(Name = "type")]
         public string Type { get; set; }
 
-        [DataMember(Name = "$")]
+        [DataMember(Name = "INVALID_MEMBER_NAME")]
         public int Value { get; set; }
     }
 }

@@ -20,8 +20,8 @@ namespace AlloCine
         #region Declarations
 
         private const string AlloCineBaseAddress = "http://api.allocine.fr/rest/v3/";
-        private const string AlloCineSecretKey = "29d185d98c984a359e6e6f26a0474269";
-        private const string AlloCinePartnerKey = "100043982026";
+        private const string AlloCineSecretKey = "1a1ed8c1bed24d60ae3472eed1da33eb";
+        private const string AlloCinePartnerKey = "100ED1DA33EB";
         //private const string MobileBrowserUserAgent = "Dalvik/1.6.0 (Linux; U; Android 4.2.2; Nexus 4 Build/JDQ39E)";
         private const string MobileBrowserUserAgent =
             "Dalvik/1.2.0 (Linux; U; Android 2.2.2; Huawei U8800-51 Build/HWU8800B635)";
@@ -125,7 +125,7 @@ namespace AlloCine
                 nvc["page"] = pageNumber.ToString();
 
             //We create the final Query string including the call signature
-            string searchQuery = BuildSearchQueryWithSignature(ref nvc);
+            string searchQuery = BuildSearchQueryWithSignature(SearchUrl, ref nvc);
             var alObjectModel =
                 DownloadData(string.Format(SearchUrl, searchQuery), typeof (AllocineObjectModel)) as AllocineObjectModel;
 
@@ -213,7 +213,7 @@ namespace AlloCine
                 nvc["page"] = pageNumber.ToString();
 
             //We create the final Query string including the call signature
-            string searchQuery = BuildSearchQueryWithSignature(ref nvc);
+            string searchQuery = BuildSearchQueryWithSignature(SearchUrl, ref nvc);
             var alObjectModel =
                 await DownloadDataAsync(string.Format(SearchUrl, searchQuery), typeof(AllocineObjectModel)) as AllocineObjectModel;
 
@@ -320,7 +320,7 @@ namespace AlloCine
                     UrlEncodeUpperCase(string.Join(",", mediaFormats.ToList().ConvertAll(MediaFormatsGetValue)));
 
             //We create the final Query string including the call signature
-            string searchQuery = BuildSearchQueryWithSignature(ref nvc);
+            string searchQuery = BuildSearchQueryWithSignature(MovieGetInfoUrl, ref nvc);
             var alObjectModel =
                 DownloadData(string.Format(MovieGetInfoUrl, searchQuery), typeof (AllocineObjectModel)) as
                     AllocineObjectModel;
@@ -426,7 +426,7 @@ namespace AlloCine
                     UrlEncodeUpperCase(string.Join(",", mediaFormats.ToList().ConvertAll(MediaFormatsGetValue)));
 
             //We create the final Query string including the call signature
-            string searchQuery = BuildSearchQueryWithSignature(ref nvc);
+            string searchQuery = BuildSearchQueryWithSignature(MovieGetInfoUrl, ref nvc);
             var alObjectModel =
                 await DownloadDataAsync(string.Format(MovieGetInfoUrl, searchQuery), typeof(AllocineObjectModel)) as
                     AllocineObjectModel;
@@ -545,7 +545,7 @@ namespace AlloCine
             nvc["filter"] = ReviewTypesGetValue(type);
 
             //We create the final Query string including the call signature
-            string searchQuery = BuildSearchQueryWithSignature(ref nvc);
+            string searchQuery = BuildSearchQueryWithSignature(MovieGetReviewListUrl, ref nvc);
             var alObjectModel =
                 DownloadData(string.Format(MovieGetReviewListUrl, searchQuery), typeof (AllocineObjectModel)) as
                     AllocineObjectModel;
@@ -604,7 +604,7 @@ namespace AlloCine
             nvc["filter"] = ReviewTypesGetValue(type);
 
             //We create the final Query string including the call signature
-            string searchQuery = BuildSearchQueryWithSignature(ref nvc);
+            string searchQuery = BuildSearchQueryWithSignature(MovieGetReviewListUrl, ref nvc);
             var alObjectModel =
                 await DownloadDataAsync(string.Format(MovieGetReviewListUrl, searchQuery), typeof(AllocineObjectModel)) as
                     AllocineObjectModel;
@@ -671,7 +671,7 @@ namespace AlloCine
                 nvc["filter"] = UrlEncodeUpperCase(string.Join(",", types).ToLower());
 
             //We create the final Query string including the call signature
-            string searchQuery = BuildSearchQueryWithSignature(ref nvc);
+            string searchQuery = BuildSearchQueryWithSignature(PersonGetInfoUrl, ref nvc);
             var alObjectModel =
                 DownloadData(string.Format(PersonGetInfoUrl, searchQuery), typeof (AllocineObjectModel)) as
                     AllocineObjectModel;
@@ -721,7 +721,7 @@ namespace AlloCine
                 nvc["filter"] = UrlEncodeUpperCase(string.Join(",", types).ToLower());
 
             //We create the final Query string including the call signature
-            string searchQuery = BuildSearchQueryWithSignature(ref nvc);
+            string searchQuery = BuildSearchQueryWithSignature(PersonGetInfoUrl, ref nvc);
             var alObjectModel =
                 await DownloadDataAsync(string.Format(PersonGetInfoUrl, searchQuery), typeof(AllocineObjectModel)) as
                     AllocineObjectModel;
@@ -788,7 +788,7 @@ namespace AlloCine
                 nvc["filter"] = UrlEncodeUpperCase(string.Join(",", types).ToLower());
 
             //We create the final Query string including the call signature
-            string searchQuery = BuildSearchQueryWithSignature(ref nvc);
+            string searchQuery = BuildSearchQueryWithSignature(PersonGetFilmographyUrl, ref nvc);
             var alObjectModel =
                 DownloadData(string.Format(PersonGetFilmographyUrl, searchQuery), typeof (AllocineObjectModel)) as
                     AllocineObjectModel;
@@ -838,7 +838,7 @@ namespace AlloCine
                 nvc["filter"] = UrlEncodeUpperCase(string.Join(",", types).ToLower());
 
             //We create the final Query string including the call signature
-            string searchQuery = BuildSearchQueryWithSignature(ref nvc);
+            string searchQuery = BuildSearchQueryWithSignature(PersonGetFilmographyUrl, ref nvc);
             var alObjectModel =
                 await DownloadDataAsync(string.Format(PersonGetFilmographyUrl, searchQuery), typeof(AllocineObjectModel)) as
                     AllocineObjectModel;
@@ -906,7 +906,7 @@ namespace AlloCine
                     UrlEncodeUpperCase(string.Join(",", mediaFormats.ToList().ConvertAll(MediaFormatsGetValue)));
 
             //We create the final Query string including the call signature
-            string searchQuery = BuildSearchQueryWithSignature(ref nvc);
+            string searchQuery = BuildSearchQueryWithSignature(MediaGetInfoUrl, ref nvc);
             var alObjectModel =
                 DownloadData(string.Format(MediaGetInfoUrl, searchQuery), typeof (AllocineObjectModel)) as
                     AllocineObjectModel;
@@ -957,7 +957,7 @@ namespace AlloCine
                     UrlEncodeUpperCase(string.Join(",", mediaFormats.ToList().ConvertAll(MediaFormatsGetValue)));
 
             //We create the final Query string including the call signature
-            string searchQuery = BuildSearchQueryWithSignature(ref nvc);
+            string searchQuery = BuildSearchQueryWithSignature(MediaGetInfoUrl, ref nvc);
             var alObjectModel =
                 await DownloadDataAsync(string.Format(MediaGetInfoUrl, searchQuery), typeof(AllocineObjectModel)) as
                     AllocineObjectModel;
@@ -1033,7 +1033,7 @@ namespace AlloCine
                     UrlEncodeUpperCase(string.Join(",", mediaFormats.ToList().ConvertAll(MediaFormatsGetValue)));
 
             //We create the final Query string including the call signature
-            string searchQuery = BuildSearchQueryWithSignature(ref nvc);
+            string searchQuery = BuildSearchQueryWithSignature(TvSeriesGetInfoUrl, ref nvc);
             var alObjectModel =
                 DownloadData(string.Format(TvSeriesGetInfoUrl, searchQuery), typeof (AllocineObjectModel)) as
                     AllocineObjectModel;
@@ -1093,7 +1093,7 @@ namespace AlloCine
                     UrlEncodeUpperCase(string.Join(",", mediaFormats.ToList().ConvertAll(MediaFormatsGetValue)));
 
             //We create the final Query string including the call signature
-            string searchQuery = BuildSearchQueryWithSignature(ref nvc);
+            string searchQuery = BuildSearchQueryWithSignature(TvSeriesGetInfoUrl, ref nvc);
             var alObjectModel =
                 await DownloadDataAsync(string.Format(TvSeriesGetInfoUrl, searchQuery), typeof (AllocineObjectModel)) as
                     AllocineObjectModel;
@@ -1169,7 +1169,7 @@ namespace AlloCine
                     UrlEncodeUpperCase(string.Join(",", mediaFormats.ToList().ConvertAll(MediaFormatsGetValue)));
 
             //We create the final Query string including the call signature
-            string searchQuery = BuildSearchQueryWithSignature(ref nvc);
+            string searchQuery = BuildSearchQueryWithSignature(TvSeriesSeasonGetInfoUrl, ref nvc);
             var alObjectModel =
                 DownloadData(string.Format(TvSeriesSeasonGetInfoUrl, searchQuery), typeof (AllocineObjectModel)) as
                     AllocineObjectModel;
@@ -1227,7 +1227,7 @@ namespace AlloCine
                     UrlEncodeUpperCase(string.Join(",", mediaFormats.ToList().ConvertAll(MediaFormatsGetValue)));
 
             //We create the final Query string including the call signature
-            string searchQuery = BuildSearchQueryWithSignature(ref nvc);
+            string searchQuery = BuildSearchQueryWithSignature(TvSeriesSeasonGetInfoUrl, ref nvc);
             var alObjectModel =
                 await DownloadDataAsync(string.Format(TvSeriesSeasonGetInfoUrl, searchQuery), typeof(AllocineObjectModel)) as
                     AllocineObjectModel;
@@ -1302,7 +1302,7 @@ namespace AlloCine
                     UrlEncodeUpperCase(string.Join(",", mediaFormats.ToList().ConvertAll(MediaFormatsGetValue)));
 
             //We create the final Query string including the call signature
-            string searchQuery = BuildSearchQueryWithSignature(ref nvc);
+            string searchQuery = BuildSearchQueryWithSignature(TvSeriesEpisodeGetInfoUrl, ref nvc);
             var alObjectModel =
                 DownloadData(string.Format(TvSeriesEpisodeGetInfoUrl, searchQuery), typeof (AllocineObjectModel)) as
                     AllocineObjectModel;
@@ -1360,7 +1360,7 @@ namespace AlloCine
                     UrlEncodeUpperCase(string.Join(",", mediaFormats.ToList().ConvertAll(MediaFormatsGetValue)));
 
             //We create the final Query string including the call signature
-            string searchQuery = BuildSearchQueryWithSignature(ref nvc);
+            string searchQuery = BuildSearchQueryWithSignature(TvSeriesEpisodeGetInfoUrl, ref nvc);
             var alObjectModel =
                 await DownloadDataAsync(string.Format(TvSeriesEpisodeGetInfoUrl, searchQuery), typeof(AllocineObjectModel)) as
                     AllocineObjectModel;
@@ -1453,7 +1453,7 @@ namespace AlloCine
                 nvc["page"] = pageNumber.ToString();
 
             //We create the final Query string including the call signature
-            string searchQuery = BuildSearchQueryWithSignature(ref nvc);
+            string searchQuery = BuildSearchQueryWithSignature(TheaterGetListUrl, ref nvc);
             var alObjectModel =
                 DownloadData(string.Format(TheaterGetListUrl, searchQuery), typeof(AllocineObjectModel)) as AllocineObjectModel;
 
@@ -1526,7 +1526,7 @@ namespace AlloCine
                 nvc["page"] = pageNumber.ToString();
 
             //We create the final Query string including the call signature
-            string searchQuery = BuildSearchQueryWithSignature(ref nvc);
+            string searchQuery = BuildSearchQueryWithSignature(TheaterGetListUrl, ref nvc);
             var alObjectModel =
                 await DownloadDataAsync(string.Format(TheaterGetListUrl, searchQuery), typeof(AllocineObjectModel)) as AllocineObjectModel;
 
@@ -1630,7 +1630,7 @@ namespace AlloCine
                 nvc["page"] = pageNumber.ToString();
 
             //We create the final Query string including the call signature
-            string searchQuery = BuildSearchQueryWithSignature(ref nvc);
+            string searchQuery = BuildSearchQueryWithSignature(TheaterGetShowtimeListUrl, ref nvc);
             var alObjectModel =
                 DownloadData(string.Format(TheaterGetShowtimeListUrl, searchQuery), typeof(AllocineObjectModel)) as AllocineObjectModel;
 
@@ -1718,7 +1718,7 @@ namespace AlloCine
                 nvc["page"] = pageNumber.ToString();
 
             //We create the final Query string including the call signature
-            string searchQuery = BuildSearchQueryWithSignature(ref nvc);
+            string searchQuery = BuildSearchQueryWithSignature(TheaterGetShowtimeListUrl, ref nvc);
             var alObjectModel =
                 await DownloadDataAsync(string.Format(TheaterGetShowtimeListUrl, searchQuery), typeof(AllocineObjectModel)) as AllocineObjectModel;
 
@@ -1790,7 +1790,7 @@ namespace AlloCine
                 nvc["page"] = pageNumber.ToString();
 
             //We create the final Query string including the call signature
-            string searchQuery = BuildSearchQueryWithSignature(ref nvc);
+            string searchQuery = BuildSearchQueryWithSignature(MovieGetOnTheaterListUrl, ref nvc);
             var alObjectModel =
                 DownloadData(string.Format(MovieGetOnTheaterListUrl, searchQuery), typeof(AllocineObjectModel)) as AllocineObjectModel;
 
@@ -1847,7 +1847,7 @@ namespace AlloCine
                 nvc["page"] = pageNumber.ToString();
 
             //We create the final Query string including the call signature
-            string searchQuery = BuildSearchQueryWithSignature(ref nvc);
+            string searchQuery = BuildSearchQueryWithSignature(MovieGetOnTheaterListUrl, ref nvc);
             var alObjectModel =
                 await DownloadDataAsync(string.Format(MovieGetOnTheaterListUrl, searchQuery), typeof(AllocineObjectModel)) as AllocineObjectModel;
 
@@ -2045,20 +2045,20 @@ namespace AlloCine
 
         #region BuildSearchQueryWithSignature
 
-        /// <summary>
-        ///     Create the Query string including the new URL signature AlloCine API expects
-        /// </summary>
-        /// <param name="nvc">The NameValueCollection containing all parameters of the Query string</param>
-        /// <returns>Returns the search Query string</returns>
-        private string BuildSearchQueryWithSignature(ref NameValueCollection nvc)
+		/// <summary>
+		///     Create the Query string including the new URL signature AlloCine API expects
+		/// </summary>
+		/// <param name="nvc">The NameValueCollection containing all parameters of the Query string</param>
+		/// <returns>Returns the search Query string</returns>
+		//private string BuildSearchQueryWithSignature(ref NameValueCollection nvc) => BuildSearchQueryWithSignature("", ref nvc);
+		private string BuildSearchQueryWithSignature(string method, ref NameValueCollection nvc)
         {
             NameValueCollection collection = nvc;
             nvc["sed"] = DateTime.Now.ToString("yyyyMMdd");
 
-            string searchQuery = string.Join("&",
-                collection.AllKeys.Select(k => string.Format("{0}={1}", k, collection[k])));
+            var searchQuery = string.Join("&", collection.AllKeys.Select(k => $"{k}={collection[k]}"));
 
-            string toEncrypt = AlloCineSecretKey + searchQuery;
+            var toEncrypt = method.Substring(0, method.IndexOf('?')) + searchQuery + AlloCineSecretKey;
             string sig;
             using (SHA1 sha = new SHA1CryptoServiceProvider())
             {
