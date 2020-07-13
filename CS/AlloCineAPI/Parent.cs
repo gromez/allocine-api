@@ -1,17 +1,18 @@
 ﻿using System.Runtime.Serialization;
+using System.Text.Json.Serialization;
 
 namespace AlloCine
 {
     [DataContract(Name = "parent")]
     public class Parent
     {
-        [DataMember(Name = "scheme")]
+        [JsonPropertyName("scheme")]
         public string Scheme { get; set; }
 
-        [DataMember(Name = "code")]
+        [JsonPropertyName("code")]
         public int Code { get; set; }
 
-        [DataMember(Name = "name")]
+        [JsonPropertyName("name")]
         public string Name { get; set; }
 
     }

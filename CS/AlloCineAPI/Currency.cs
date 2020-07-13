@@ -1,11 +1,12 @@
 ﻿using System.Runtime.Serialization;
+using System.Text.Json.Serialization;
 
 namespace AlloCine
 {
     [DataContract(Name = "currency")]
     public class Currency
     {
-        [DataMember(Name = "code")]
+        [JsonPropertyName("code")]
         public int Code { get; set; }
     }
 }

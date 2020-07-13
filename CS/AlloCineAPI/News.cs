@@ -1,30 +1,31 @@
 ﻿using System.Collections.Generic;
 using System.Runtime.Serialization;
+using System.Text.Json.Serialization;
 
 namespace AlloCine
 {
     [DataContract]
     public class News
     {
-        [DataMember(Name = "code")]
+        [JsonPropertyName("code")]
         public int Code { get; set; }
 
-        [DataMember(Name = "publication")]
+        [JsonPropertyName("publication")]
         public Publication Publication { get; set; }
 
-        [DataMember(Name = "title")]
+        [JsonPropertyName("title")]
         public string Title { get; set; }
 
-        [DataMember(Name = "picture")]
+        [JsonPropertyName("picture")]
         public NewsPicture Picture { get; set; }
 
-        [DataMember(Name = "displayMode")]
+        [JsonPropertyName("displayMode")]
         public DisplayMode DisplayMode { get; set; }
 
-        [DataMember(Name = "category")]
+        [JsonPropertyName("category")]
         public List<Category> CategoryList { get; set; }
 
-        [DataMember(Name = "headline")]
+        [JsonPropertyName("headline")]
         public string Headline { get; set; }
 
     }

@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Runtime.Serialization;
+using System.Text.Json.Serialization;
 using Allocine.ExtensionMethods;
 
 namespace AlloCine
@@ -7,10 +8,10 @@ namespace AlloCine
     [DataContract]
     public class HelpfulPositiveReview
     {
-        [DataMember(Name = "code")]
+        [JsonPropertyName("code")]
         public int Code { get; set; }
 
-        [DataMember(Name = "creationDate")]
+        [JsonPropertyName("creationDate")]
         private string CreationDateString
         {
             get { throw new NotImplementedException(); }
@@ -18,13 +19,13 @@ namespace AlloCine
         }
         public DateTime CreationDate { get; set; }
 
-        [DataMember(Name = "writer")]
+        [JsonPropertyName("writer")]
         public Writer Writer { get; set; }
 
-        [DataMember(Name = "body")]
+        [JsonPropertyName("body")]
         public string Body { get; set; }
 
-        [DataMember(Name = "rating")]
+        [JsonPropertyName("rating")]
         public float Rating { get; set; }
 
     }

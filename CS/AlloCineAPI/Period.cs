@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Runtime.Serialization;
+using System.Text.Json.Serialization;
 using Allocine.ExtensionMethods;
 
 namespace AlloCine
@@ -7,7 +8,7 @@ namespace AlloCine
     [DataContract(Name = "period")]
     public class Period
     {
-        [DataMember(Name = "dateStart")]
+        [JsonPropertyName("dateStart")]
         private string DateStartString
         {
             get { throw new NotImplementedException(); }
@@ -15,7 +16,7 @@ namespace AlloCine
         }
         public DateTime DateStart { get; set; }
 
-        [DataMember(Name = "dateEnd")]
+        [JsonPropertyName("dateEnd")]
         private string DateEndString
         {
             get { throw new NotImplementedException(); }

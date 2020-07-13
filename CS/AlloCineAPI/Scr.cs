@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Runtime.Serialization;
+using System.Text.Json.Serialization;
 using Allocine.ExtensionMethods;
 
 namespace AlloCine
@@ -8,7 +9,7 @@ namespace AlloCine
     [DataContract]
     public class Scr
     {
-        [DataMember(Name = "d")]
+        [JsonPropertyName("d")]
         private string DString
         {
             get { throw new NotImplementedException(); }
@@ -16,7 +17,7 @@ namespace AlloCine
         }
         public DateTime D { get; set; }
 
-        [DataMember(Name = "t")]
+        [JsonPropertyName("t")]
         public List<T> T { get; set; }
     }
 }

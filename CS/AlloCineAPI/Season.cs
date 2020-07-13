@@ -1,48 +1,49 @@
 ﻿using System.Collections.Generic;
 using System.Runtime.Serialization;
+using System.Text.Json.Serialization;
 
 namespace AlloCine
 {
     [DataContract(Name = "season")]
     public class Season
     {
-        [DataMember(Name = "code")]
+        [JsonPropertyName("code")]
         public int Code { get; set; }
 
-        [DataMember(Name = "parentSeries")]
+        [JsonPropertyName("parentSeries")]
         public ParentSeries ParentSeries { get; set; }
 
-        [DataMember(Name = "seasonNumber")]
+        [JsonPropertyName("seasonNumber")]
         public int SeasonNumber { get; set; }
 
-        [DataMember(Name = "episodeCount")]
+        [JsonPropertyName("episodeCount")]
         public int EpisodeCount { get; set; }
 
-        [DataMember(Name = "productionStatus")]
+        [JsonPropertyName("productionStatus")]
         public ProductionStatus ProductionStatus { get; set; }
 
-        [DataMember(Name = "yearStart")]
+        [JsonPropertyName("yearStart")]
         public int YearStart { get; set; }
 
-        [DataMember(Name = "yearEnd")]
+        [JsonPropertyName("yearEnd")]
         public int YearEnd { get; set; }
 
-        [DataMember(Name = "trailerEmbed")]
+        [JsonPropertyName("trailerEmbed")]
         public string TrailerEmbed { get; set; }
 
-        [DataMember(Name = "castMember")]
+        [JsonPropertyName("castMember")]
         public List<CastMember> CastMemberList { get; set; }
 
-        [DataMember(Name = "episode")]
+        [JsonPropertyName("episode")]
         public List<Episode> EpisodeList { get; set; }
 
-        [DataMember(Name = "link")]
+        [JsonPropertyName("link")]
         public List<Link> LinkList { get; set; }
 
-        [DataMember(Name = "media")]
+        [JsonPropertyName("media")]
         public List<Media> MediaList { get; set; }
 
-        [DataMember(Name = "statistics")]
+        [JsonPropertyName("statistics")]
         public Statistics Statistics { get; set; }
 
         public Error Error { get; set; }

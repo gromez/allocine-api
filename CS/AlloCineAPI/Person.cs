@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Runtime.Serialization;
+using System.Text.Json.Serialization;
 using Allocine.ExtensionMethods;
 
 namespace AlloCine
@@ -8,31 +9,31 @@ namespace AlloCine
     [DataContract(Name = "person")]
     public class Person
     {
-        [DataMember(Name = "code")]
+        [JsonPropertyName("code")]
         public int Code { get; set; }
 
-        [DataMember(Name = "name")]
+        [JsonPropertyName("name")]
         public NameGivenFamily NameGivenFamily { get; set; }
 
-        [DataMember(Name = "gender")]
+        [JsonPropertyName("gender")]
         public string Gender { get; set; }
 
-        [DataMember(Name = "nationality")]
+        [JsonPropertyName("nationality")]
         public List<Nationality> NationalityList { get; set; }
 
-        [DataMember(Name = "activity")]
+        [JsonPropertyName("activity")]
         public List<Activity> ActivityList { get; set; }
 
-        [DataMember(Name = "activityShort")]
+        [JsonPropertyName("activityShort")]
         public string ActivityShort { get; set; }
 
-        [DataMember(Name = "biographyShort")]
+        [JsonPropertyName("biographyShort")]
         public string BiographyShort { get; set; }
 
-        [DataMember(Name = "biography")]
+        [JsonPropertyName("biography")]
         public string Biography { get; set; }
 
-        [DataMember(Name = "birthDate")]
+        [JsonPropertyName("birthDate")]
         private string BirthDateString
         {
             get { throw new NotImplementedException(); }
@@ -40,22 +41,22 @@ namespace AlloCine
         }
         public DateTime BirthDate { get; set; }
 
-        [DataMember(Name = "birthPlace")]
+        [JsonPropertyName("birthPlace")]
         public string BirthPlace { get; set; }
 
-        [DataMember(Name = "picture")]
+        [JsonPropertyName("picture")]
         public Picture Picture { get; set; }
 
-        [DataMember(Name = "link")]
+        [JsonPropertyName("link")]
         public List<Link> LinkList { get; set; }
 
-        [DataMember(Name = "participation")]
+        [JsonPropertyName("participation")]
         public List<Participation> ParticipationList { get; set; }
 
-        [DataMember(Name = "media")]
+        [JsonPropertyName("media")]
         public List<Media> MediaList { get; set; }
 
-        [DataMember(Name = "news")]
+        [JsonPropertyName("news")]
         public List<News> NewsList { get; set; }
 
         public Error Error { get; set; }

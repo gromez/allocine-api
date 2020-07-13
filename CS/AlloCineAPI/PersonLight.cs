@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Runtime.Serialization;
+using System.Text.Json.Serialization;
 using Allocine.ExtensionMethods;
 
 namespace AlloCine
@@ -8,19 +9,19 @@ namespace AlloCine
     [DataContract(Name = "person")]
     public class PersonLight
     {
-        [DataMember(Name = "code")]
+        [JsonPropertyName("code")]
         public int Code { get; set; }
 
-        [DataMember(Name = "realName")]
+        [JsonPropertyName("realName")]
         public string RealName { get; set; }
 
-        [DataMember(Name = "name")]
+        [JsonPropertyName("name")]
         public string Name { get; set; }
 
-        [DataMember(Name = "gender")]
+        [JsonPropertyName("gender")]
         public string Gender { get; set; }
 
-        [DataMember(Name = "birthDate")]
+        [JsonPropertyName("birthDate")]
         private string BirthDateString
         {
             get { throw new NotImplementedException(); }
@@ -28,7 +29,7 @@ namespace AlloCine
         }
         public DateTime BirthDate { get; set; }
 
-        [DataMember(Name = "deathDate")]
+        [JsonPropertyName("deathDate")]
         private string DeathDateString
         {
             get { throw new NotImplementedException(); }
@@ -36,16 +37,16 @@ namespace AlloCine
         }
         public DateTime DeathDate { get; set; }
 
-        [DataMember(Name = "activity")]
+        [JsonPropertyName("activity")]
         public List<Activity> ActivityList { get; set; }
 
-        [DataMember(Name = "nationality")]
+        [JsonPropertyName("nationality")]
         public List<Nationality> NationalityList { get; set; }
 
-        [DataMember(Name = "picture")]
+        [JsonPropertyName("picture")]
         public List<Picture> PictureList { get; set; }
 
-        [DataMember(Name = "link")]
+        [JsonPropertyName("link")]
         public List<Link> LinkList { get; set; }
 
 

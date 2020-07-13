@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Runtime.Serialization;
+using System.Text.Json.Serialization;
 using Allocine.ExtensionMethods;
 
 namespace AlloCine
@@ -8,40 +9,40 @@ namespace AlloCine
     [DataContract(Name = "feed")]
     public class Feed
     {
-        [DataMember(Name = "page")]
+        [JsonPropertyName("page")]
         public int Page { get; set; }
 
-        [DataMember(Name = "count")]
+        [JsonPropertyName("count")]
         public int Count { get; set; }
 
-        [DataMember(Name = "results")]
+        [JsonPropertyName("results")]
         public List<Results> ResultsList { get; set; }
 
-        [DataMember(Name = "totalResults")]
+        [JsonPropertyName("totalResults")]
         public int TotalResults { get; set; }
 
-        [DataMember(Name = "movie")]
+        [JsonPropertyName("movie")]
         public List<Movie> MovieList { get; set; }
 
-        [DataMember(Name = "theater")]
+        [JsonPropertyName("theater")]
         public List<Theater> TheaterList { get; set; }
 
-        [DataMember(Name = "location")]
+        [JsonPropertyName("location")]
         public List<Location> LocationList { get; set; }
 
-        [DataMember(Name = "person")]
+        [JsonPropertyName("person")]
         public List<PersonLight> PersonList { get; set; }
 
-        [DataMember(Name = "tvseries")]
+        [JsonPropertyName("tvseries")]
         public List<TvSeries> TvSeriesList { get; set; }
 
-        [DataMember(Name = "news")]
+        [JsonPropertyName("news")]
         public List<News> NewsList { get; set; }
 
-        [DataMember(Name = "media")]
+        [JsonPropertyName("media")]
         public List<Media> MediaList { get; set; }
 
-        [DataMember(Name = "updated")]
+        [JsonPropertyName("updated")]
         private string UpdatedString
         {
             get { throw new NotImplementedException(); }
@@ -49,10 +50,10 @@ namespace AlloCine
         }
         public DateTime Updated { get; set; }
 
-        [DataMember(Name = "review")]
+        [JsonPropertyName("review")]
         public List<Review> ReviewList { get; set; }
 
-        [DataMember(Name = "theaterShowtimes")]
+        [JsonPropertyName("theaterShowtimes")]
         public List<TheaterShowtime> TheaterShowtimeList { get; set; }
 
         public Error Error { get; set; }

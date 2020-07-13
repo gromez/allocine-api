@@ -8,6 +8,7 @@ using System.Net;
 using System.Runtime.Serialization.Json;
 using System.Security.Cryptography;
 using System.Text;
+using System.Text.Json;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Web;
@@ -1903,8 +1904,11 @@ namespace AlloCine
                     {
                         if (stream == null)
                             return null;
-                        var dcs = new DataContractJsonSerializer(type);
-                        object o = dcs.ReadObject(stream);
+
+                        using var reader = new StreamReader(stream);
+                        var raw = reader.ReadToEnd();
+
+                        var o = JsonSerializer.Deserialize(raw, type);
                         return o;
                     }
                 }
@@ -1933,8 +1937,11 @@ namespace AlloCine
                     {
                         if (stream == null)
                             return null;
-                        var dcs = new DataContractJsonSerializer(type);
-                        object o = dcs.ReadObject(stream);
+
+                        using var reader = new StreamReader(stream);
+                        var raw = reader.ReadToEnd();
+
+                        var o = JsonSerializer.Deserialize(raw, type);
                         return o;
                     }
                 }

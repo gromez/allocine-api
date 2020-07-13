@@ -1,45 +1,46 @@
 ﻿using System.Collections.Generic;
 using System.Runtime.Serialization;
+using System.Text.Json.Serialization;
 
 namespace AlloCine
 {
     [DataContract]
     public class Theater
     {
-        [DataMember(Name = "code")]
+        [JsonPropertyName("code")]
         public string Code { get; set; }
 
-        [DataMember(Name = "name")]
+        [JsonPropertyName("name")]
         public string Name { get; set; }
 
-        [DataMember(Name = "address")]
+        [JsonPropertyName("address")]
         public string Address { get; set; }
 
-        [DataMember(Name = "postalCode")]
+        [JsonPropertyName("postalCode")]
         public string PostalCode { get; set; }
 
-        [DataMember(Name = "city")]
+        [JsonPropertyName("city")]
         public string City { get; set; }
 
-        [DataMember(Name = "subway")]
+        [JsonPropertyName("subway")]
         public string Subway { get; set; }
 
-        [DataMember(Name = "cinemaChain")]
+        [JsonPropertyName("cinemaChain")]
         public CinemaChain CinemaChain { get; set; }
 
-        [DataMember(Name = "screenCount")]
+        [JsonPropertyName("screenCount")]
         public int ScreenCount { get; set; }
 
-        [DataMember(Name = "geoloc")]
+        [JsonPropertyName("geoloc")]
         public Geoloc Geoloc { get; set; }
 
-        [DataMember(Name = "picture")]
+        [JsonPropertyName("picture")]
         public Picture Picture { get; set; }
 
-        [DataMember(Name = "hasPRMAccess")]
+        [JsonPropertyName("hasPRMAccess")]
         public int HasPRMAccess { get; set; }
 
-        [DataMember(Name = "link")]
+        [JsonPropertyName("link")]
         public List<Link> LinkList { get; set; }
 
 

@@ -1,42 +1,43 @@
 ﻿using System.Collections.Generic;
 using System.Runtime.Serialization;
+using System.Text.Json.Serialization;
 
 namespace AlloCine
 {
     [DataContract]
     public class Media
     {
-        [DataMember(Name = "class")]
+        [JsonPropertyName("class")]
         public string Class { get; set; }
 
-        [DataMember(Name = "code")]
+        [JsonPropertyName("code")]
         public int Code { get; set; }
 
-        [DataMember(Name = "rcode")]
+        [JsonPropertyName("rcode")]
         public int Rcode { get; set; }
 
-        [DataMember(Name = "type")]
+        [JsonPropertyName("type")]
         public Type Type { get; set; }
 
-        [DataMember(Name = "title")]
+        [JsonPropertyName("title")]
         public string Title { get; set; }
 
-        [DataMember(Name = "thumbnail")]
+        [JsonPropertyName("thumbnail")]
         public Thumbnail Thumbnail { get; set; }
 
-        [DataMember(Name = "description")]
+        [JsonPropertyName("description")]
         public string Description { get; set; }
 
-        [DataMember(Name = "rendition")]
+        [JsonPropertyName("rendition")]
         public List<Rendition> RenditionList { get; set; }
 
-        [DataMember(Name = "publication")]
+        [JsonPropertyName("publication")]
         public Publication Publication { get; set; }
 
-        [DataMember(Name = "version")]
+        [JsonPropertyName("version")]
         public Version Version { get; set; }
 
-        [DataMember(Name = "copyrightHolder")]
+        [JsonPropertyName("copyrightHolder")]
         public string CopyrightHolder { get; set; }
 
         public Error Error { get; set; }

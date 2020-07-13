@@ -1,21 +1,22 @@
 ﻿using System.Collections.Generic;
 using System.Runtime.Serialization;
+using System.Text.Json.Serialization;
 
 namespace AlloCine
 {
     [DataContract]
     public class Trivia
     {
-        [DataMember(Name = "code")]
+        [JsonPropertyName("code")]
         public int Code { get; set; }
 
-        [DataMember(Name = "publication")]
+        [JsonPropertyName("publication")]
         public Publication Publication { get; set; }
 
-        [DataMember(Name = "title")]
+        [JsonPropertyName("title")]
         public string Title { get; set; }
 
-        [DataMember(Name = "body")]
+        [JsonPropertyName("body")]
         public string Body { get; set; }
 
     }

@@ -1,30 +1,31 @@
 ﻿using System.Collections.Generic;
 using System.Runtime.Serialization;
+using System.Text.Json.Serialization;
 
 namespace AlloCine
 {
     [DataContract]
     public class MovieShowtime
     {
-        [DataMember(Name = "preview")]
+        [JsonPropertyName("preview")]
         public string Preview { get; set; }
 
-        [DataMember(Name = "releaseWeek")]
+        [JsonPropertyName("releaseWeek")]
         public string ReleaseWeek { get; set; }
 
-        [DataMember(Name = "onShow")]
+        [JsonPropertyName("onShow")]
         public OnShow OnShow { get; set; }
 
-        [DataMember(Name = "version")]
+        [JsonPropertyName("version")]
         public Version Version { get; set; }
 
-        [DataMember(Name = "screenFormat")]
+        [JsonPropertyName("screenFormat")]
         public ScreenFormat ScreenFormat { get; set; }
 
-        [DataMember(Name = "display")]
+        [JsonPropertyName("display")]
         public string Display { get; set; }
 
-        [DataMember(Name = "scr")]
+        [JsonPropertyName("scr")]
         public List<Scr> ScrList { get; set; }
     }
 }

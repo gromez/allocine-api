@@ -1,14 +1,15 @@
 ﻿using System.Runtime.Serialization;
+using System.Text.Json.Serialization;
 
 namespace AlloCine
 {
     [DataContract(Name = "thumbnail")]
     public class Thumbnail
     {
-        [DataMember(Name = "path")]
+        [JsonPropertyName("path")]
         public string Path { get; set; }
 
-        [DataMember(Name = "href")]
+        [JsonPropertyName("href")]
         public string Href { get; set; }
     }
 }

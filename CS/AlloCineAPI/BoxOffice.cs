@@ -1,41 +1,42 @@
 ﻿using System.Runtime.Serialization;
+using System.Text.Json.Serialization;
 
 namespace AlloCine
 {
     [DataContract]
     public class BoxOffice
     {
-        [DataMember(Name = "type")]
+        [JsonPropertyName("type")]
         public Type Type { get; set; }
 
-        [DataMember(Name = "country")]
+        [JsonPropertyName("country")]
         public Country Country { get; set; }
 
-        [DataMember(Name = "period")]
+        [JsonPropertyName("period")]
         public Period Period { get; set; }
 
-        [DataMember(Name = "week")]
+        [JsonPropertyName("week")]
         public int Week { get; set; }
 
-        [DataMember(Name = "gross")]
+        [JsonPropertyName("gross")]
         public string Gross { get; set; }
 
-        [DataMember(Name = "grossTotal")]
+        [JsonPropertyName("grossTotal")]
         public string GrossTotal { get; set; }
 
-        //[DataMember(Name = "currency")]
+        //[JsonPropertyName("currency")]
         //public string Currency { get; set; }
 
-        [DataMember(Name = "currency")]
+        [JsonPropertyName("currency")]
         public Currency Currency { get; set; }
 
-        [DataMember(Name = "admissionCount")]
+        [JsonPropertyName("admissionCount")]
         public int AdmissionCount { get; set; }
 
-        [DataMember(Name = "admissionCountTotal")]
+        [JsonPropertyName("admissionCountTotal")]
         public int AdmissionCountTotal { get; set; }
 
-        [DataMember(Name = "copyCount")]
+        [JsonPropertyName("copyCount")]
         public int CopyCount { get; set; }
 
     }

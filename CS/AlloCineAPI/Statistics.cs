@@ -1,81 +1,82 @@
 ﻿using System.Collections.Generic;
 using System.Runtime.Serialization;
+using System.Text.Json.Serialization;
 
 namespace AlloCine
 {
     [DataContract(Name = "statistics")]
     public class Statistics
     {
-        [DataMember(Name = "pressRating")]
+        [JsonPropertyName("pressRating")]
         public float PressRating { get; set; }
 
-        [DataMember(Name = "pressReviewCount")]
+        [JsonPropertyName("pressReviewCount")]
         public int PressReviewCount { get; set; }
 
-        [DataMember(Name = "userRating")]
+        [JsonPropertyName("userRating")]
         public float UserRating { get; set; }
 
-        [DataMember(Name = "userReviewCount")]
+        [JsonPropertyName("userReviewCount")]
         public int UserReviewCount { get; set; }
 
-        [DataMember(Name = "userRatingCount")]
+        [JsonPropertyName("userRatingCount")]
         public int UserRatingCount { get; set; }
 
-        [DataMember(Name = "averageViewerCount")]
+        [JsonPropertyName("averageViewerCount")]
         public int AverageViewerCount { get; set; }
 
-        [DataMember(Name = "editorialRatingCount")]
+        [JsonPropertyName("editorialRatingCount")]
         public int EditorialRatingCount { get; set; }
         
-        [DataMember(Name = "commentCount")]
+        [JsonPropertyName("commentCount")]
         public int CommentCount { get; set; }
 
-        [DataMember(Name = "photoCount")]
+        [JsonPropertyName("photoCount")]
         public int PhotoCount { get; set; }
 
-        [DataMember(Name = "videoCount")]
+        [JsonPropertyName("videoCount")]
         public int VideoCount { get; set; }
 
-        [DataMember(Name = "triviaCount")]
+        [JsonPropertyName("triviaCount")]
         public int TriviaCount { get; set; }
 
-        [DataMember(Name = "newsCount")]
+        [JsonPropertyName("newsCount")]
         public int newsCount { get; set; }
 
-        [DataMember(Name = "rankTopMovie")]
+        [JsonPropertyName("rankTopMovie")]
         public int RankTopMovie { get; set; }
 
-        [DataMember(Name = "variationTopMovie")]
+        [JsonPropertyName("variationTopMovie")]
         public int VariationTopMovie { get; set; }
 
-        [DataMember(Name = "awardCount")]
+        [JsonPropertyName("awardCount")]
         public int AwardCount { get; set; }
 
-        [DataMember(Name = "nominationCount")]
+        [JsonPropertyName("nominationCount")]
         public int NominationCount { get; set; }
 
-        [DataMember(Name = "rating")]
+        [JsonPropertyName("rating")]
         public List<Rating> RatingList { get; set; }
 
-        [DataMember(Name = "ratingStats")]
+        [JsonPropertyName("ratingStats")]
         public List<RatingStats> RatingStats { get; set; }
 
-        [DataMember(Name = "fanCount")]
+        [JsonPropertyName("fanCount")]
         public int FanCount { get; set; }
 
-        [DataMember(Name = "wantToSeeCount")]
+        [JsonPropertyName("wantToSeeCount")]
         public int WantToSeeCount { get; set; }
 
-        [DataMember(Name = "releaseWeekPosition")]
+        [JsonPropertyName("releaseWeekPosition")]
         public int ReleaseWeekPosition { get; set; }
 
-        [DataMember(Name = "admissionCount")]
+        [JsonPropertyName("admissionCount")]
         public int AdmissionCount { get; set; }
 
-        [DataMember(Name = "theaterCount")]
+        [JsonPropertyName("theaterCount")]
         public int TheaterCount { get; set; }
 
-        [DataMember(Name = "theaterCountOnRelease")]
+        [JsonPropertyName("theaterCountOnRelease")]
         public string TheaterCountOnRelease { get; set; }
 
     }

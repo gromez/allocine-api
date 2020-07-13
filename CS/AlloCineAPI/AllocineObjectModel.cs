@@ -1,32 +1,33 @@
 ﻿using System.Runtime.Serialization;
+using System.Text.Json.Serialization;
 
 namespace AlloCine
 {
     [DataContract]
     internal class AllocineObjectModel
-    {
-        [DataMember(Name = "error")]
-        public Error Error = new Error();
+	{
+		[JsonPropertyName("error")]
+		public Error Error { get; set; } = new Error();
 
-        [DataMember(Name = "movie")]
-        public Movie Movie = new Movie();
+        [JsonPropertyName("movie")]
+        public Movie Movie { get; set; } = new Movie();
 
-        [DataMember(Name = "feed")]
-        public Feed Feed = new Feed();
+        [JsonPropertyName("feed")]
+        public Feed Feed { get; set; } = new Feed();
 
-        [DataMember(Name = "person")]
-        public Person Person = new Person();
+        [JsonPropertyName("person")]
+        public Person Person { get; set; } = new Person();
 
-        [DataMember(Name = "media")]
-        public Media Media = new Media();
+        [JsonPropertyName("media")]
+        public Media Media { get; set; } = new Media();
 
-        [DataMember(Name = "tvseries")]
-        public TvSeries TvSeries = new TvSeries();
+        [JsonPropertyName("tvseries")]
+        public TvSeries TvSeries { get; set; } = new TvSeries();
 
-        [DataMember(Name = "season")]
-        public Season Season = new Season();
+        [JsonPropertyName("season")]
+        public Season Season { get; set; } = new Season();
 
-        [DataMember(Name = "episode")]
-        public Episode Episode = new Episode();
+        [JsonPropertyName("episode")]
+        public Episode Episode { get; set; } = new Episode();
     }
 }

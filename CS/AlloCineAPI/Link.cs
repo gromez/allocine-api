@@ -1,17 +1,18 @@
 ﻿using System.Runtime.Serialization;
+using System.Text.Json.Serialization;
 
 namespace AlloCine
 {
     [DataContract]
     public class Link
     {
-        [DataMember(Name = "rel")]
+        [JsonPropertyName("rel")]
         public string Rel { get; set; }
 
-        [DataMember(Name = "name")]
+        [JsonPropertyName("name")]
         public string Name { get; set; }
 
-        [DataMember(Name = "href")]
+        [JsonPropertyName("href")]
         public string Href { get; set; }
     }
 }

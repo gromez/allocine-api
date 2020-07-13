@@ -1,23 +1,24 @@
 ﻿using System.Runtime.Serialization;
+using System.Text.Json.Serialization;
 
 namespace AlloCine
 {
     [DataContract]
     public class FestivalAward
     {
-        [DataMember(Name = "code")]
+        [JsonPropertyName("code")]
         public int Code { get; set; }
 
-        [DataMember(Name = "parentFestival")]
+        [JsonPropertyName("parentFestival")]
         public ParentFestival ParentFestival { get; set; }
 
-        [DataMember(Name = "parentEdition")]
+        [JsonPropertyName("parentEdition")]
         public ParentEdition ParentEdition { get; set; }
 
-        [DataMember(Name = "awardType")]
+        [JsonPropertyName("awardType")]
         public AwardType AwardType { get; set; }
 
-        [DataMember(Name = "name")]
+        [JsonPropertyName("name")]
         public string Name { get; set; }
 
     }

@@ -1,14 +1,15 @@
 ﻿using System.Runtime.Serialization;
+using System.Text.Json.Serialization;
 
 namespace AlloCine
 {
     [DataContract]
     public class Results
     {
-        [DataMember(Name = "type")]
+        [JsonPropertyName("type")]
         public string Type { get; set; }
 
-        [DataMember(Name = "INVALID_MEMBER_NAME")]
+        [JsonPropertyName("INVALID_MEMBER_NAME")]
         public int Value { get; set; }
     }
 }

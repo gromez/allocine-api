@@ -1,27 +1,28 @@
 ﻿using System.Collections.Generic;
 using System.Runtime.Serialization;
+using System.Text.Json.Serialization;
 
 namespace AlloCine
 {
     [DataContract]
     public class Location
     {
-        [DataMember(Name = "code")]
+        [JsonPropertyName("code")]
         public int Code { get; set; }
 
-        [DataMember(Name = "parent")]
+        [JsonPropertyName("parent")]
         public Parent Parent { get; set; }
 
-        [DataMember(Name = "locationType")]
+        [JsonPropertyName("locationType")]
         public LocationType LocationType { get; set; }
 
-        [DataMember(Name = "name")]
+        [JsonPropertyName("name")]
         public string Name { get; set; }
 
-        [DataMember(Name = "postalCode")]
+        [JsonPropertyName("postalCode")]
         public string PostalCode { get; set; }
 
-        [DataMember(Name = "geoloc")]
+        [JsonPropertyName("geoloc")]
         public Geoloc Geoloc { get; set; }
 
 

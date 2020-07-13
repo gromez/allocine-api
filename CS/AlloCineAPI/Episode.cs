@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Runtime.Serialization;
+using System.Text.Json.Serialization;
 using Allocine.ExtensionMethods;
 
 namespace AlloCine
@@ -8,19 +9,19 @@ namespace AlloCine
     [DataContract(Name = "episode")]
     public class Episode
     {
-        [DataMember(Name = "code")]
+        [JsonPropertyName("code")]
         public int Code { get; set; }
 
-        [DataMember(Name = "parentSeries")]
+        [JsonPropertyName("parentSeries")]
         public ParentSeries ParentSeries { get; set; }
 
-        [DataMember(Name = "parentSeason")]
+        [JsonPropertyName("parentSeason")]
         public ParentSeason ParentSeason { get; set; }
 
-        [DataMember(Name = "originalTitle")]
+        [JsonPropertyName("originalTitle")]
         public string OriginalTitle { get; set; }
 
-        [DataMember(Name = "originalBroadcastDate")]
+        [JsonPropertyName("originalBroadcastDate")]
         private string OriginalBroadcastDateString
         {
             get { throw new NotImplementedException(); }
@@ -28,28 +29,28 @@ namespace AlloCine
         }
         public DateTime OriginalBroadcastDate { get; set; }
 
-        [DataMember(Name = "title")]
+        [JsonPropertyName("title")]
         public string Title { get; set; }
 
-        [DataMember(Name = "episodeNumberSeries")]
+        [JsonPropertyName("episodeNumberSeries")]
         public string EpisodeNumberSeries { get; set; }
 
-        [DataMember(Name = "episodeNumberSeason")]
+        [JsonPropertyName("episodeNumberSeason")]
         public string EpisodeNumberSeason { get; set; }
 
-        [DataMember(Name = "synopsisShort")]
+        [JsonPropertyName("synopsisShort")]
         public string SynopsisShort { get; set; }
 
-        [DataMember(Name = "synopsis")]
+        [JsonPropertyName("synopsis")]
         public string Synopsis { get; set; }
 
-        [DataMember(Name = "castMember")]
+        [JsonPropertyName("castMember")]
         public List<CastMember> CastMemberList { get; set; }
 
-        [DataMember(Name = "link")]
+        [JsonPropertyName("link")]
         public List<Link> LinkList { get; set; }
 
-        [DataMember(Name = "statistics")]
+        [JsonPropertyName("statistics")]
         public Statistics Statistics { get; set; }
 
         public Error Error { get; set; }

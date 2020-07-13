@@ -1,17 +1,18 @@
 ﻿using System.Runtime.Serialization;
+using System.Text.Json.Serialization;
 
 namespace AlloCine
 {
     [DataContract(Name = "castingShort")]
     public class CastingShort
     {
-        [DataMember(Name = "directors")]
+        [JsonPropertyName("directors")]
         public string Directors { get; set; }
 
-        [DataMember(Name = "actors")]
+        [JsonPropertyName("actors")]
         public string Actors { get; set; }
 
-        [DataMember(Name = "creators")]
+        [JsonPropertyName("creators")]
         public string Creators { get; set; }
 
     }

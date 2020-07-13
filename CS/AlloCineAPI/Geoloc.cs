@@ -1,14 +1,15 @@
 ﻿using System.Runtime.Serialization;
+using System.Text.Json.Serialization;
 
 namespace AlloCine
 {
     [DataContract(Name = "geoloc")]
     public class Geoloc
     {
-        [DataMember(Name = "lat")]
+        [JsonPropertyName("lat")]
         public string Lat { get; set; }
 
-        [DataMember(Name = "long")]
+        [JsonPropertyName("long")]
         public string Long { get; set; }
     }
 }

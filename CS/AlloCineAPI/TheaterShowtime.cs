@@ -1,15 +1,16 @@
 ﻿using System.Collections.Generic;
 using System.Runtime.Serialization;
+using System.Text.Json.Serialization;
 
 namespace AlloCine
 {
     [DataContract]
     public class TheaterShowtime
     {
-        [DataMember(Name = "place")]
+        [JsonPropertyName("place")]
         public Place Place { get; set; }
 
-        [DataMember(Name = "movieShowtimes")]
+        [JsonPropertyName("movieShowtimes")]
         public List<MovieShowtime> MovieShowtimeList { get; set; }
     }
 }
