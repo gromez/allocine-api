@@ -15,7 +15,7 @@ namespace AlloCine
             [JsonPropertyName("lang")]
             public int Lang { get; set; }
 
-            [JsonPropertyName("INVALID_MEMBER_NAME")]
+            [JsonPropertyName("$")]
             public string Value { get; set; }
         }
 }

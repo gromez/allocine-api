@@ -9,7 +9,7 @@ namespace AlloCine
         [JsonPropertyName("code")]
         public int Code { get; set; }
 
-        [JsonPropertyName("INVALID_MEMBER_NAME")]
+        [JsonPropertyName("$")]
         public string Value { get; set; }
 
     }
