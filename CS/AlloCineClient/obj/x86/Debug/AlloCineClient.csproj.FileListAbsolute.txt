@@ -1,0 +1,14 @@
+C:\src\OORepo\AlloCineAPI\AlloCineClient\bin\Debug\AlloCineClient.exe.config
+C:\src\OORepo\AlloCineAPI\AlloCineClient\bin\Debug\AlloCineClient.exe
+C:\src\OORepo\AlloCineAPI\AlloCineClient\bin\Debug\AlloCineClient.pdb
+C:\src\OORepo\AlloCineAPI\AlloCineClient\bin\Debug\AlloCineAPI.dll
+C:\src\OORepo\AlloCineAPI\AlloCineClient\bin\Debug\AlloCineAPI.pdb
+C:\src\OORepo\AlloCineAPI\AlloCineClient\bin\Debug\AlloCineAPI.xml
+C:\src\OORepo\AlloCineAPI\AlloCineClient\obj\x86\Debug\AlloCineClient.csprojAssemblyReference.cache
+C:\src\OORepo\AlloCineAPI\AlloCineClient\obj\x86\Debug\AlloCineClient.Form1.resources
+C:\src\OORepo\AlloCineAPI\AlloCineClient\obj\x86\Debug\AlloCineClient.Properties.Resources.resources
+C:\src\OORepo\AlloCineAPI\AlloCineClient\obj\x86\Debug\AlloCineClient.csproj.GenerateResource.cache
+C:\src\OORepo\AlloCineAPI\AlloCineClient\obj\x86\Debug\AlloCineClient.csproj.CoreCompileInputs.cache
+C:\src\OORepo\AlloCineAPI\AlloCineClient\obj\x86\Debug\AlloCineClient.csproj.CopyComplete
+C:\src\OORepo\AlloCineAPI\AlloCineClient\obj\x86\Debug\AlloCineClient.exe
+C:\src\OORepo\AlloCineAPI\AlloCineClient\obj\x86\Debug\AlloCineClient.pdb

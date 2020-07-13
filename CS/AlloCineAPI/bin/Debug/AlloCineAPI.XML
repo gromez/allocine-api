@@ -1,0 +1,498 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>AlloCineAPI</name>
+    </assembly>
+    <members>
+        <member name="M:AlloCine.AlloCineApi.#ctor">
+            <summary>
+                Initializes a new instance of the <see cref="T:AlloCine.AlloCineApi" /> class.
+            </summary>
+        </member>
+        <member name="M:AlloCine.AlloCineApi.#ctor(System.String,System.String)">
+            <summary>
+                Initializes a new instance of the <see cref="T:AlloCine.AlloCineApi" /> class with the specified Proxy User/Password
+                credentials.
+                The Proxy assigned to your default browser will be used.
+            </summary>
+            <param name="proxyUserName">Your Proxy User Name credential.</param>
+            <param name="proxyPassword">Your Proxy Password credential.</param>
+        </member>
+        <member name="M:AlloCine.AlloCineApi.#ctor(System.String,System.String,System.String)">
+            <summary>
+                Initializes a new instance of the <see cref="T:AlloCine.AlloCineApi" /> class with the specified Proxy Address and
+                User/Password credentials.
+            </summary>
+            <param name="proxyServerAddress">Your Proxy absolute address including the port number.</param>
+            <param name="proxyUserName">Your Proxy User Name credential.</param>
+            <param name="proxyPassword">Your Proxy Password credential.</param>
+        </member>
+        <member name="M:AlloCine.AlloCineApi.Search(System.String,System.Collections.Generic.IEnumerable{AlloCine.TypeFilters},System.Int32,System.Int32,System.Object)">
+            <summary>
+                Search any reference of a title in the AlloCine database.
+            </summary>
+            <param name="query">The query string you are searching for.</param>
+            <param name="types">The types of information you whish to include in the response from AlloCine.</param>
+            <param name="resultsPerPage">The maximum number of results per page to be returned.</param>
+            <param name="pageNumber">
+                The page you want to show in case your query returns more results than the maximum value you
+                have specified to fit on one page.
+            </param>
+            <param name="userState">A unique identifier of your choice to recognize this call within the "Completed" event handler</param>
+            <returns>Returns a Feed object.</returns>
+        </member>
+        <member name="M:AlloCine.AlloCineApi.Search(System.String,System.Object)">
+            <summary>
+                Search any reference of a title in the AlloCine database.
+                It only returns records of type "Movie" with a maximum of 100 results per page, showing the first page.
+            </summary>
+            <param name="query">The query string you are searching for.</param>
+            <param name="userState">A unique identifier of your choice to recognize this call within the "Completed" event handler</param>
+            <returns>Returns a Feed object.</returns>
+        </member>
+        <member name="M:AlloCine.AlloCineApi.Search(System.String,System.Int32,System.Int32,System.Object)">
+            <summary>
+                Search any reference of a title in the AlloCine database.
+                It only returns records of type "Movie".
+            </summary>
+            <param name="query">The query string you are searching for.</param>
+            <param name="resultsPerPage">The maximum number of results per page to be returned.</param>
+            <param name="pageNumber">
+                The page you want to show in case your query returns more results than the maximum value you
+                have specified to fit on one page.
+            </param>
+            <param name="userState">A unique identifier of your choice to recognize this call within the "Completed" event handler</param>
+            <returns>Returns a Feed object.</returns>
+        </member>
+        <member name="M:AlloCine.AlloCineApi.SearchAsync(System.String,System.Collections.Generic.IEnumerable{AlloCine.TypeFilters},System.Int32,System.Int32,System.Object)">
+            <summary>
+                Search any reference of a title in the AlloCine database.
+            </summary>
+            <param name="query">The query string you are searching for.</param>
+            <param name="types">The types of information you whish to include in the response from AlloCine.</param>
+            <param name="resultsPerPage">The maximum number of results per page to be returned.</param>
+            <param name="pageNumber">
+                The page you want to show in case your query returns more results than the maximum value you
+                have specified to fit on one page.
+            </param>
+            <param name="userState">A unique identifier of your choice to recognize this call within the "Completed" event handler</param>
+            <returns>Returns a Feed object.</returns>
+        </member>
+        <member name="M:AlloCine.AlloCineApi.SearchAsync(System.String,System.Object)">
+            <summary>
+                Search any reference of a title in the AlloCine database.
+                It only returns records of type "Movie" with a maximum of 100 results per page, showing the first page.
+            </summary>
+            <param name="query">The query string you are searching for.</param>
+            <param name="userState">A unique identifier of your choice to recognize this call within the "Completed" event handler</param>
+            <returns>Returns a Feed object.</returns>
+        </member>
+        <member name="M:AlloCine.AlloCineApi.SearchAsync(System.String,System.Int32,System.Int32,System.Object)">
+            <summary>
+                Search any reference of a title in the AlloCine database.
+                It only returns records of type "Movie".
+            </summary>
+            <param name="query">The query string you are searching for.</param>
+            <param name="resultsPerPage">The maximum number of results per page to be returned.</param>
+            <param name="pageNumber">
+                The page you want to show in case your query returns more results than the maximum value you
+                have specified to fit on one page.
+            </param>
+            <param name="userState">A unique identifier of your choice to recognize this call within the "Completed" event handler</param>
+            <returns>Returns a Feed object.</returns>
+        </member>
+        <member name="M:AlloCine.AlloCineApi.MovieGetInfo(System.Int32,AlloCine.ResponseProfiles,System.Collections.Generic.IEnumerable{AlloCine.TypeFilters},System.Collections.Generic.IEnumerable{System.String},System.Collections.Generic.IEnumerable{AlloCine.MediaFormat},System.Object)">
+            <summary>
+                Retrieves all information about a particular Movie.
+            </summary>
+            <param name="movieCode">The AlloCine Code of the Movie you are searching for.</param>
+            <param name="profile">The level of details returned by AlloCine.</param>
+            <param name="types">The types of information you whish to include in the response from AlloCine.</param>
+            <param name="stripTags">
+                Value fields from which you want any HTML tags, if present, to be removed, so the values are
+                returned in plain text.
+            </param>
+            <param name="mediaFormats">Video formats to return for the Movie.</param>
+            <param name="userState">A unique identifier of your choice to recognize this call within the "Completed" event handler</param>
+            <returns>Returns a Movie object.</returns>
+        </member>
+        <member name="M:AlloCine.AlloCineApi.MovieGetInfo(System.Int32,System.Object)">
+            <summary>
+                Retrieves all information about a particular movie.
+                It only returns records of Movie type with Medium details, removing any HTML tags on synopsis and synopsisshort.
+            </summary>
+            <param name="movieCode">The AlloCine Code of the movie you are searching for.</param>
+            <param name="userState">A unique identifier of your choice to recognize this call within the "Completed" event handler</param>
+            <returns>Returns a Movie object.</returns>
+        </member>
+        <member name="M:AlloCine.AlloCineApi.MovieGetInfo(System.Int32,AlloCine.ResponseProfiles,System.Object)">
+            <summary>
+                Retrieves all information about a particular movie.
+                It only returns records of Movie type, removing any HTML tags on synopsis and synopsisshort.
+                The level of details is left to your choice.
+            </summary>
+            <param name="movieCode">The AlloCine Code of the movie you are searching for.</param>
+            <param name="profile">The level of details returned by AlloCine.</param>
+            <param name="userState">A unique identifier of your choice to recognize this call within the "Completed" event handler</param>
+            <returns>Returns a Movie object.</returns>
+        </member>
+        <member name="M:AlloCine.AlloCineApi.MovieGetInfo(System.Int32,AlloCine.ResponseProfiles,System.Collections.Generic.IEnumerable{AlloCine.TypeFilters},System.Object)">
+            <summary>
+                Retrieves all information about a particular movie.
+                It removes any HTML tags on synopsis and synopsisshort.
+                The level of details and types of records to return is left to your choice.
+            </summary>
+            <param name="movieCode">The AlloCine Code of the movie you are searching for.</param>
+            <param name="profile">The level of details returned by AlloCine.</param>
+            <param name="types">The types of information you whish to include in the response from AlloCine.</param>
+            <param name="userState">A unique identifier of your choice to recognize this call within the "Completed" event handler</param>
+            <returns>Returns a Movie object.</returns>
+        </member>
+        <member name="M:AlloCine.AlloCineApi.MovieGetInfoAsync(System.Int32,AlloCine.ResponseProfiles,System.Collections.Generic.IEnumerable{AlloCine.TypeFilters},System.Collections.Generic.IEnumerable{System.String},System.Collections.Generic.IEnumerable{AlloCine.MediaFormat},System.Object)">
+            <summary>
+                Retrieves all information about a particular Movie.
+            </summary>
+            <param name="movieCode">The AlloCine Code of the Movie you are searching for.</param>
+            <param name="profile">The level of details returned by AlloCine.</param>
+            <param name="types">The types of information you whish to include in the response from AlloCine.</param>
+            <param name="stripTags">
+                Value fields from which you want any HTML tags, if present, to be removed, so the values are
+                returned in plain text.
+            </param>
+            <param name="mediaFormats">Video formats to return for the Movie.</param>
+            <param name="userState">A unique identifier of your choice to recognize this call within the "Completed" event handler</param>
+            <returns>Returns a Movie object.</returns>
+        </member>
+        <member name="M:AlloCine.AlloCineApi.MovieGetInfoAsync(System.Int32,System.Object)">
+            <summary>
+                Retrieves all information about a particular movie.
+                It only returns records of Movie type with Medium details, removing any HTML tags on synopsis and synopsisshort.
+            </summary>
+            <param name="movieCode">The AlloCine Code of the movie you are searching for.</param>
+            <param name="userState">A unique identifier of your choice to recognize this call within the "Completed" event handler</param>
+            <returns>Returns a Movie object.</returns>
+        </member>
+        <member name="M:AlloCine.AlloCineApi.MovieGetInfoAsync(System.Int32,AlloCine.ResponseProfiles,System.Object)">
+            <summary>
+                Retrieves all information about a particular movie.
+                It only returns records of Movie type, removing any HTML tags on synopsis and synopsisshort.
+                The level of details is left to your choice.
+            </summary>
+            <param name="movieCode">The AlloCine Code of the movie you are searching for.</param>
+            <param name="profile">The level of details returned by AlloCine.</param>
+            <param name="userState">A unique identifier of your choice to recognize this call within the "Completed" event handler</param>
+            <returns>Returns a Movie object.</returns>
+        </member>
+        <member name="M:AlloCine.AlloCineApi.MovieGetInfoAsync(System.Int32,AlloCine.ResponseProfiles,System.Collections.Generic.IEnumerable{AlloCine.TypeFilters},System.Object)">
+            <summary>
+                Retrieves all information about a particular movie.
+                It removes any HTML tags on synopsis and synopsisshort.
+                The level of details and types of records to return is left to your choice.
+            </summary>
+            <param name="movieCode">The AlloCine Code of the movie you are searching for.</param>
+            <param name="profile">The level of details returned by AlloCine.</param>
+            <param name="types">The types of information you whish to include in the response from AlloCine.</param>
+            <param name="userState">A unique identifier of your choice to recognize this call within the "Completed" event handler</param>
+            <returns>Returns a Movie object.</returns>
+        </member>
+        <member name="M:AlloCine.AlloCineApi.MovieGetReviewList(System.Int32,AlloCine.ReviewTypes,System.Int32,System.Int32,System.Object)">
+            <summary>
+                Retrieves the Reviews about a particular Movie.
+            </summary>
+            <param name="movieCode">The AlloCine Code of the Movie you are searching for.</param>
+            <param name="type">The type of Review, either from Press or Public</param>
+            <param name="resultsPerPage">The maximum number of results per page to be returned.</param>
+            <param name="pageNumber">
+                The page you want to show in case your query returns more results than the maximum value you
+                have specified to fit on one page.
+            </param>
+            <param name="userState">A unique identifier of your choice to recognize this call within the "Completed" event handler</param>
+            <returns>Returns a Feed object.</returns>
+        </member>
+        <member name="M:AlloCine.AlloCineApi.MovieGetReviewListAsync(System.Int32,AlloCine.ReviewTypes,System.Int32,System.Int32,System.Object)">
+            <summary>
+                Retrieves the Reviews about a particular Movie.
+            </summary>
+            <param name="movieCode">The AlloCine Code of the Movie you are searching for.</param>
+            <param name="type">The type of Review, either from Press or Public</param>
+            <param name="resultsPerPage">The maximum number of results per page to be returned.</param>
+            <param name="pageNumber">
+                The page you want to show in case your query returns more results than the maximum value you
+                have specified to fit on one page.
+            </param>
+            <param name="userState">A unique identifier of your choice to recognize this call within the "Completed" event handler</param>
+            <returns>Returns a Feed object.</returns>
+        </member>
+        <member name="M:AlloCine.AlloCineApi.PersonGetInfo(System.Int32,AlloCine.ResponseProfiles,System.Collections.Generic.IEnumerable{AlloCine.TypeFilters},System.Object)">
+            <summary>
+                Retrieves all information about a particular Person.
+            </summary>
+            <param name="personCode">The AlloCine Code of the Person you are searching for.</param>
+            <param name="profile">The level of details returned by AlloCine.</param>
+            <param name="types">The types of information you whish to include in the response from AlloCine.</param>
+            <param name="userState">A unique identifier of your choice to recognize this call within the "Completed" event handler</param>
+            <returns>Returns a Person object.</returns>
+        </member>
+        <member name="M:AlloCine.AlloCineApi.PersonGetInfoAsync(System.Int32,AlloCine.ResponseProfiles,System.Collections.Generic.IEnumerable{AlloCine.TypeFilters},System.Object)">
+            <summary>
+                Retrieves all information about a particular Person.
+            </summary>
+            <param name="personCode">The AlloCine Code of the Person you are searching for.</param>
+            <param name="profile">The level of details returned by AlloCine.</param>
+            <param name="types">The types of information you whish to include in the response from AlloCine.</param>
+            <param name="userState">A unique identifier of your choice to recognize this call within the "Completed" event handler</param>
+            <returns>Returns a Person object.</returns>
+        </member>
+        <member name="M:AlloCine.AlloCineApi.PersonGetFilmography(System.Int32,AlloCine.ResponseProfiles,System.Collections.Generic.IEnumerable{AlloCine.TypeFilters},System.Object)">
+            <summary>
+                Retrieves all Filmography about a particular Person.
+            </summary>
+            <param name="personCode">The AlloCine Code of the Person you are searching for.</param>
+            <param name="profile">The level of details returned by AlloCine.</param>
+            <param name="types">The types of information you whish to include in the response from AlloCine.</param>
+            <param name="userState">A unique identifier of your choice to recognize this call within the "Completed" event handler</param>
+            <returns>Returns a Person object.</returns>
+        </member>
+        <member name="M:AlloCine.AlloCineApi.PersonGetFilmographyAsync(System.Int32,AlloCine.ResponseProfiles,System.Collections.Generic.IEnumerable{AlloCine.TypeFilters},System.Object)">
+            <summary>
+                Retrieves all Filmography about a particular Person.
+            </summary>
+            <param name="personCode">The AlloCine Code of the Person you are searching for.</param>
+            <param name="profile">The level of details returned by AlloCine.</param>
+            <param name="types">The types of information you whish to include in the response from AlloCine.</param>
+            <param name="userState">A unique identifier of your choice to recognize this call within the "Completed" event handler</param>
+            <returns>Returns a Person object.</returns>
+        </member>
+        <member name="M:AlloCine.AlloCineApi.MediaGetInfo(System.Int32,AlloCine.ResponseProfiles,System.Collections.Generic.IEnumerable{AlloCine.MediaFormat},System.Object)">
+            <summary>
+                Retrieves all info about a particular Media.
+            </summary>
+            <param name="mediaCode">The AlloCine Code of the Media you are searching for.</param>
+            <param name="profile">The level of details returned by AlloCine.</param>
+            <param name="mediaFormats">Video formats to return for the Media.</param>
+            <param name="userState">A unique identifier of your choice to recognize this call within the "Completed" event handler</param>
+            <returns>Returns a Media object.</returns>
+        </member>
+        <member name="M:AlloCine.AlloCineApi.MediaGetInfoAsync(System.Int32,AlloCine.ResponseProfiles,System.Collections.Generic.IEnumerable{AlloCine.MediaFormat},System.Object)">
+            <summary>
+                Retrieves all info about a particular Media.
+            </summary>
+            <param name="mediaCode">The AlloCine Code of the Media you are searching for.</param>
+            <param name="profile">The level of details returned by AlloCine.</param>
+            <param name="mediaFormats">Video formats to return for the Media.</param>
+            <param name="userState">A unique identifier of your choice to recognize this call within the "Completed" event handler</param>
+            <returns>Returns a Media object.</returns>
+        </member>
+        <member name="M:AlloCine.AlloCineApi.TvSeriesGetInfo(System.Int32,AlloCine.ResponseProfiles,System.Collections.Generic.IEnumerable{System.String},System.Collections.Generic.IEnumerable{AlloCine.MediaFormat},System.Object)">
+            <summary>
+                Retrieves all info about a particular TvSerie Season.
+            </summary>
+            <param name="tvseriesCode">The AlloCine Code of the TvSeries you are searching for.</param>
+            <param name="profile">The level of details returned by AlloCine.</param>
+            <param name="stripTags">
+                Value fields from which you want any HTML tags, if present, to be removed, so the values are
+                returned in plain text.
+            </param>
+            <param name="mediaFormats">Video formats to return for the TvSeries.</param>
+            <param name="userState">A unique identifier of your choice to recognize this call within the "Completed" event handler</param>
+            <returns>Returns a TvSeries object.</returns>
+        </member>
+        <member name="M:AlloCine.AlloCineApi.TvSeriesGetInfoAsync(System.Int32,AlloCine.ResponseProfiles,System.Collections.Generic.IEnumerable{System.String},System.Collections.Generic.IEnumerable{AlloCine.MediaFormat},System.Object)">
+            <summary>
+                Retrieves all info about a particular TvSerie Season.
+            </summary>
+            <param name="tvseriesCode">The AlloCine Code of the TvSeries you are searching for.</param>
+            <param name="profile">The level of details returned by AlloCine.</param>
+            <param name="stripTags">
+                Value fields from which you want any HTML tags, if present, to be removed, so the values are
+                returned in plain text.
+            </param>
+            <param name="mediaFormats">Video formats to return for the TvSeries.</param>
+            <param name="userState">A unique identifier of your choice to recognize this call within the "Completed" event handler</param>
+            <returns>Returns a TvSeries object.</returns>
+        </member>
+        <member name="M:AlloCine.AlloCineApi.TvSeriesSeasonGetInfo(System.Int32,AlloCine.ResponseProfiles,System.Collections.Generic.IEnumerable{System.String},System.Collections.Generic.IEnumerable{AlloCine.MediaFormat},System.Object)">
+            <summary>
+                Retrieves all info about a particular TvSerie Season.
+            </summary>
+            <param name="seasonCode">The AlloCine Code of the Season you are searching for.</param>
+            <param name="profile">The level of details returned by AlloCine.</param>
+            <param name="stripTags">
+                Value fields from which you want any HTML tags, if present, to be removed, so the values are
+                returned in plain text.
+            </param>
+            <param name="mediaFormats">Video formats to return for the Season.</param>
+            <param name="userState">A unique identifier of your choice to recognize this call within the "Completed" event handler</param>
+            <returns>Returns a Season object.</returns>
+        </member>
+        <member name="M:AlloCine.AlloCineApi.TvSeriesSeasonGetInfoAsync(System.Int32,AlloCine.ResponseProfiles,System.Collections.Generic.IEnumerable{System.String},System.Collections.Generic.IEnumerable{AlloCine.MediaFormat},System.Object)">
+            <summary>
+                Retrieves all info about a particular TvSerie Season.
+            </summary>
+            <param name="seasonCode">The AlloCine Code of the Season you are searching for.</param>
+            <param name="profile">The level of details returned by AlloCine.</param>
+            <param name="stripTags">
+                Value fields from which you want any HTML tags, if present, to be removed, so the values are
+                returned in plain text.
+            </param>
+            <param name="mediaFormats">Video formats to return for the Season.</param>
+            <param name="userState">A unique identifier of your choice to recognize this call within the "Completed" event handler</param>
+            <returns>Returns a Season object.</returns>
+        </member>
+        <member name="M:AlloCine.AlloCineApi.TvSeriesEpisodeGetInfo(System.Int32,AlloCine.ResponseProfiles,System.Collections.Generic.IEnumerable{System.String},System.Collections.Generic.IEnumerable{AlloCine.MediaFormat},System.Object)">
+            <summary>
+                Retrieves all info about a particular TvSerie Episode.
+            </summary>
+            <param name="episodeCode">The AlloCine Code of the Episode you are searching for.</param>
+            <param name="profile">The level of details returned by AlloCine.</param>
+            <param name="stripTags">
+                Value fields from which you want any HTML tags, if present, to be removed, so the values are
+                returned in plain text.
+            </param>
+            <param name="mediaFormats">Video formats to return for the Episode.</param>
+            <param name="userState">A unique identifier of your choice to recognize this call within the "Completed" event handler</param>
+            <returns>Returns an Episode object.</returns>
+        </member>
+        <member name="M:AlloCine.AlloCineApi.TvSeriesEpisodeGetInfoAsync(System.Int32,AlloCine.ResponseProfiles,System.Collections.Generic.IEnumerable{System.String},System.Collections.Generic.IEnumerable{AlloCine.MediaFormat},System.Object)">
+            <summary>
+                Retrieves all info about a particular TvSerie Episode.
+            </summary>
+            <param name="episodeCode">The AlloCine Code of the Episode you are searching for.</param>
+            <param name="profile">The level of details returned by AlloCine.</param>
+            <param name="stripTags">
+                Value fields from which you want any HTML tags, if present, to be removed, so the values are
+                returned in plain text.
+            </param>
+            <param name="mediaFormats">Video formats to return for the Episode.</param>
+            <param name="userState">A unique identifier of your choice to recognize this call within the "Completed" event handler</param>
+            <returns>Returns an Episode object.</returns>
+        </member>
+        <member name="M:AlloCine.AlloCineApi.TheaterGetList(System.String,System.String,System.Int32,System.Device.Location.GeoCoordinate,System.Int32,System.Int32,System.Int32,System.Object)">
+             <summary>
+                  Retrieves all Theater available based on different possible criteria.
+                  One on postalCode, geocode, theater, lat/long or location is mandatory
+             </summary>
+            <param name="theaterNameSearch">The query string representing the theater you are searching for.</param>
+             <param name="theaterCode">The AlloCine Code of the Theater you are searching for.</param>
+             <param name="postalCode">The postal code of the town where the theater is located.</param>
+             <param name="geoCoordinates">The latitude/longitude coordinates of a reference point.</param>
+             <param name="radius">The radius around your reference point in 'km' unit from 1 to 500.</param>
+             <param name="resultsPerPage">The maximum number of results per page to be returned.</param>
+             <param name="pageNumber">
+                 The page you want to show in case your query returns more results than the maximum value you
+                 have specified to fit on one page.
+             </param>
+             <param name="userState">A unique identifier of your choice to recognize this call within the "Completed" event handler</param>
+             <returns>Returns a Feed object.</returns>
+        </member>
+        <member name="M:AlloCine.AlloCineApi.TheaterGetListAsync(System.String,System.String,System.Int32,System.Device.Location.GeoCoordinate,System.Int32,System.Int32,System.Int32,System.Object)">
+            <summary>
+                 Retrieves all Theater available based on different possible criteria.
+                 One on theaterCode, postalCode, geoCoordinates, or cinemaChainCode is mandatory
+            </summary>
+            <param name="theaterNameSearch">The query string representing the theater you are searching for.</param> 
+            <param name="theaterCode">The AlloCine Code of the Theater you are searching for.</param>
+            <param name="postalCode">The postal code of the town where the theater is located.</param>
+            <param name="geoCoordinates">The latitude/longitude coordinates of a reference point.</param>
+            <param name="radius">The radius around your reference point in 'km' unit from 1 to 500.</param>
+            <param name="resultsPerPage">The maximum number of results per page to be returned.</param>
+            <param name="pageNumber">
+                The page you want to show in case your query returns more results than the maximum value you
+                have specified to fit on one page.
+            </param>
+            <param name="userState">A unique identifier of your choice to recognize this call within the "Completed" event handler</param>
+            <returns>Returns a Feed object.</returns>
+        </member>
+        <member name="M:AlloCine.AlloCineApi.TheaterGetShowtimeList(System.Nullable{System.DateTime},System.Collections.Generic.IEnumerable{System.String},System.Int32,System.Device.Location.GeoCoordinate,System.Int32,System.String,System.Int32,System.Int32,System.Int32,System.Object)">
+            <summary>
+                 Retrieves the Showtimes for movies per theater.
+                 One on postalCode, theater, lat/long or location is mandatory
+            </summary>
+            <param name="theaterCodes">The list of Theaters you want to get the Showtime represented by their codes.</param>
+            <param name="postalCode">The postal code of the town where the theater is located.</param>
+            <param name="geoCoordinates">The latitude/longitude coordinates of a reference point.</param>
+            <param name="radius">The radius around your reference point in 'km' unit from 1 to 500.</param>
+            <param name="theaterNameSearch">The query string representing the theater you are searching for. Must be used with movieCode.</param>
+            <param name="movieCode">The code of the specific movie you want to know the ShowTime.</param>
+            <param name="resultsPerPage">The maximum number of results per page to be returned.</param>
+            <param name="pageNumber">
+                The page you want to show in case your query returns more results than the maximum value you
+                have specified to fit on one page.
+            </param>
+            <param name="userState">A unique identifier of your choice to recognize this call within the "Completed" event handler</param>
+            <returns>Returns a Feed object.</returns>
+        </member>
+        <member name="M:AlloCine.AlloCineApi.TheaterGetShowtimeListAsync(System.Nullable{System.DateTime},System.Collections.Generic.IEnumerable{System.String},System.Int32,System.Device.Location.GeoCoordinate,System.Int32,System.String,System.Int32,System.Int32,System.Int32,System.Object)">
+            <summary>
+                 Retrieves the Showtimes for movies per theater.
+                 One on postalCode, theater, lat/long or location is mandatory
+            </summary>
+            <param name="theaterCodes">The list of Theaters you want to get the Showtime represented by their codes.</param>
+            <param name="postalCode">The postal code of the town where the theater is located.</param>
+            <param name="geoCoordinates">The latitude/longitude coordinates of a reference point.</param>
+            <param name="radius">The radius around your reference point in 'km' unit from 1 to 500.</param>
+            <param name="theaterNameSearch">The query string representing the theater you are searching for. Must be used with movieCode.</param>
+            <param name="movieCode">The code of the specific movie you want to know the ShowTime.</param>
+            <param name="resultsPerPage">The maximum number of results per page to be returned.</param>
+            <param name="pageNumber">
+                The page you want to show in case your query returns more results than the maximum value you
+                have specified to fit on one page.
+            </param>
+            <param name="userState">A unique identifier of your choice to recognize this call within the "Completed" event handler</param>
+            <returns>Returns a Feed object.</returns>
+        </member>
+        <member name="M:AlloCine.AlloCineApi.MovieGetOnTheaterList(System.Collections.Generic.IEnumerable{AlloCine.MovieListFilters},AlloCine.MovieListOrder,System.Int32,System.Int32,System.Object)">
+            <summary>
+                 Retrieves the Movies planned and/or already in Theater.
+            </summary>
+            <param name="filters">Specifies if you want Movies NowShowing and/or ComingSoon.</param>
+            <param name="order">The sequence they should be listed.</param>
+            <param name="resultsPerPage">The maximum number of results per page to be returned.</param>
+            <param name="pageNumber">
+                The page you want to show in case your query returns more results than the maximum value you
+                have specified to fit on one page.
+            </param>
+            <param name="userState">A unique identifier of your choice to recognize this call within the "Completed" event handler</param>
+            <returns>Returns a Feed object.</returns>
+        </member>
+        <member name="M:AlloCine.AlloCineApi.MovieGetOnTheaterListAsync(System.Collections.Generic.IEnumerable{AlloCine.MovieListFilters},AlloCine.MovieListOrder,System.Int32,System.Int32,System.Object)">
+            <summary>
+                 Retrieves the Movies planned and/or already in Theater.
+            </summary>
+            <param name="filters">Specifies if you want Movies NowShowing and/or ComingSoon.</param>
+            <param name="order">The sequence they should be listed.</param>
+            <param name="resultsPerPage">The maximum number of results per page to be returned.</param>
+            <param name="pageNumber">
+                The page you want to show in case your query returns more results than the maximum value you
+                have specified to fit on one page.
+            </param>
+            <param name="userState">A unique identifier of your choice to recognize this call within the "Completed" event handler</param>
+            <returns>Returns a Feed object.</returns>
+        </member>
+        <member name="M:AlloCine.AlloCineApi.UrlEncodeUpperCase(System.String)">
+            <summary>
+                UrlEncode a string but ensures all escaped characters have their Hexadecimal notation in upper case
+                A special function is required to UrlEncode the Signature because of a particularity of the Dotnet URLEncode
+                function.
+                For some reasons the DotNet function retursn the escaped characters in Lowercase while it is returned in Uppercase
+                in PHP as described by the W3C.
+                So for instance the character "=" would be URLEncoded to "%3D", but the DotNet function will return "%3d", so the
+                lower case equivalent.
+                Considering the signature is used as a Hash verification code on the receiving party it cannot mess-up with the
+                characters case else the code is rejected
+                If the receiving party is expecting this "%2F7pfS95CRYGfAaVeqAVBS9PVT%2FA%3D", passing this
+                "%2f7pfS95CRYGfAaVeqAVBS9PVT%2fA%3d" will be rejected
+                and considered as incorrect.
+            </summary>
+            <param name="stringToEncode">The string to encode</param>
+            <returns>Returns the Url encoded string</returns>
+        </member>
+        <member name="M:AlloCine.AlloCineApi.BuildSearchQueryWithSignature(System.String,System.Collections.Specialized.NameValueCollection@)">
+            <summary>
+                Create the Query string including the new URL signature AlloCine API expects
+            </summary>
+            <param name="nvc">The NameValueCollection containing all parameters of the Query string</param>
+            <returns>Returns the search Query string</returns>
+        </member>
+    </members>
+</doc>

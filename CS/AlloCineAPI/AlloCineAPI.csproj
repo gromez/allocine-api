@@ -1,0 +1,204 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{EA6E0FEF-309C-43D7-89D7-C0E7C9B818E0}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>AlloCine</RootNamespace>
+    <AssemblyName>AlloCineAPI</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <DocumentationFile>bin\Debug\AlloCineAPI.XML</DocumentationFile>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <DocumentationFile>bin\Release\AlloCineAPI.XML</DocumentationFile>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Device" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="DefaultMedia.cs" />
+    <Compile Include="OnShow.cs" />
+    <Compile Include="ScreenFormat.cs" />
+    <Compile Include="Scr.cs" />
+    <Compile Include="T.cs" />
+    <Compile Include="Version.cs" />
+    <Compile Include="Place.cs" />
+    <Compile Include="MovieShowtime.cs" />
+    <Compile Include="TheaterShowtime.cs" />
+    <Compile Include="Activity.cs" />
+    <Compile Include="AlloCineApi.cs" />
+    <Compile Include="AllocineObjectModel.cs" />
+    <Compile Include="CinemaChain.cs" />
+    <Compile Include="Event.cs" />
+    <Compile Include="ExtensionMethods.cs" />
+    <Compile Include="HelpfulNegativeReview.cs" />
+    <Compile Include="HelpfulPositiveReview.cs" />
+    <Compile Include="CopyrightHolder.cs" />
+    <Compile Include="Country.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Currency.cs" />
+    <Compile Include="Episode.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="DisplayMode.cs" />
+    <Compile Include="Writer.cs" />
+    <Compile Include="Link.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="NameGivenFamily.cs" />
+    <Compile Include="NewsSource.cs" />
+    <Compile Include="AwardType.cs" />
+    <Compile Include="BoxOffice.cs" />
+    <Compile Include="CastMember.cs" />
+    <Compile Include="CastingShort.cs" />
+    <Compile Include="Color.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Category.cs" />
+    <Compile Include="Enums.cs" />
+    <Compile Include="Error.cs" />
+    <Compile Include="Format.cs" />
+    <Compile Include="Language.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="OriginalBroadcast.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="OriginalChannel.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="ParentSeason.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="ParentSeries.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Participation.cs" />
+    <Compile Include="Period.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Person.cs" />
+    <Compile Include="PersonLight.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="ProductionStatus.cs" />
+    <Compile Include="Publication.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="RatingStats.cs" />
+    <Compile Include="Rendition.cs" />
+    <Compile Include="Review.cs" />
+    <Compile Include="ReviewUrl.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Season.cs" />
+    <Compile Include="SeriesType.cs" />
+    <Compile Include="Subject.cs" />
+    <Compile Include="Tag.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="TopBanner.cs" />
+    <Compile Include="Trailer.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Tvseries.cs" />
+    <Compile Include="Nationality.cs" />
+    <Compile Include="Geoloc.cs" />
+    <Compile Include="LocationType.cs" />
+    <Compile Include="Parent.cs" />
+    <Compile Include="Location.cs" />
+    <Compile Include="Results.cs" />
+    <Compile Include="Feed.cs" />
+    <Compile Include="FestivalAward.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="ParentEdition.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="ParentFestival.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Theater.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Trivia.cs" />
+    <Compile Include="FeaturePicture.cs" />
+    <Compile Include="Feature.cs" />
+    <Compile Include="News.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="NewsPicture.cs" />
+    <Compile Include="Picture.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Rating.cs" />
+    <Compile Include="Formatlist.cs" />
+    <Compile Include="Distributor.cs" />
+    <Compile Include="Genre.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Media.cs" />
+    <Compile Include="Poster.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="ProductionFormat.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="ProjectionFormat.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="ReleaseState.cs" />
+    <Compile Include="Movie.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Release.cs" />
+    <Compile Include="SoundFormat.cs" />
+    <Compile Include="Statistics.cs" />
+    <Compile Include="MovieType.cs" />
+    <Compile Include="Thumbnail.cs" />
+    <Compile Include="Type.cs">
+      <SubType>Code</SubType>
+    </Compile>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
