@@ -1,0 +1,7 @@
+C:\src\OORepo\AlloCineAPI\AlloCineAPI\bin\Debug\AlloCineAPI.XML
+C:\src\OORepo\AlloCineAPI\AlloCineAPI\bin\Debug\AlloCineAPI.dll
+C:\src\OORepo\AlloCineAPI\AlloCineAPI\bin\Debug\AlloCineAPI.pdb
+C:\src\OORepo\AlloCineAPI\AlloCineAPI\obj\Debug\AlloCineAPI.csprojAssemblyReference.cache
+C:\src\OORepo\AlloCineAPI\AlloCineAPI\obj\Debug\AlloCineAPI.csproj.CoreCompileInputs.cache
+C:\src\OORepo\AlloCineAPI\AlloCineAPI\obj\Debug\AlloCineAPI.dll
+C:\src\OORepo\AlloCineAPI\AlloCineAPI\obj\Debug\AlloCineAPI.pdb
