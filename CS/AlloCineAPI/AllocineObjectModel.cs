@@ -7,7 +7,7 @@ namespace AlloCine
     internal class AllocineObjectModel
 	{
 		[JsonPropertyName("error")]
-		public Error Error { get; set; } = new Error();
+		public Error Error { get; set; }
 
         [JsonPropertyName("movie")]
         public Movie Movie { get; set; } = new Movie();

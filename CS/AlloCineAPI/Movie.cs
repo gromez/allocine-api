@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Runtime.Serialization;
 using System.Text.Json.Serialization;
 
@@ -75,6 +76,15 @@ namespace AlloCine
 
         [JsonPropertyName("hasShowtime")]
         public int HasShowtime { get; set; }
+
+		[JsonPropertyName("hasVOD")]
+        public int HasVod { get; set; }
+		
+		[JsonPropertyName("hasDVD")]
+        public int HasDvd { get; set; }
+
+		[JsonPropertyName("dvdReleaseDate")]
+		public DateTime? DvdReleaseDate { get; set; }
 
         [JsonPropertyName("link")]
         public List<Link> LinkList { get; set; }

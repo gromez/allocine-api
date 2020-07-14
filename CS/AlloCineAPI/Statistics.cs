@@ -8,19 +8,19 @@ namespace AlloCine
     public class Statistics
     {
         [JsonPropertyName("pressRating")]
-        public float PressRating { get; set; }
+        public float? PressRating { get; set; }
 
         [JsonPropertyName("pressReviewCount")]
-        public int PressReviewCount { get; set; }
+        public int? PressReviewCount { get; set; }
 
         [JsonPropertyName("userRating")]
-        public float UserRating { get; set; }
+        public float? UserRating { get; set; }
 
         [JsonPropertyName("userReviewCount")]
-        public int UserReviewCount { get; set; }
+        public int? UserReviewCount { get; set; }
 
         [JsonPropertyName("userRatingCount")]
-        public int UserRatingCount { get; set; }
+        public int? UserRatingCount { get; set; }
 
         [JsonPropertyName("averageViewerCount")]
         public int AverageViewerCount { get; set; }

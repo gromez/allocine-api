@@ -9,6 +9,7 @@ using System.Runtime.Serialization.Json;
 using System.Security.Cryptography;
 using System.Text;
 using System.Text.Json;
+using System.Text.Json.Serialization;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Web;
@@ -38,7 +39,19 @@ namespace AlloCine
         private const string TheaterGetListUrl = "theaterlist?{0}";
         private const string TheaterGetShowtimeListUrl = "showtimelist?{0}";
         private const string MovieGetOnTheaterListUrl = "movielist?{0}";
-        
+
+		private static readonly JsonSerializerOptions _serializationOptions = new JsonSerializerOptions
+		{
+			PropertyNameCaseInsensitive = true,
+			Converters =
+			{
+				new JsonStringEnumConverter(), 
+				new IntToBoolConverter(), 
+				new ValueTypeToStringConverter()
+			}
+		};
+
+
         private readonly ProxyMode _proxyMode;
         private readonly string _proxyPassword;
         private readonly string _proxyServerAddress;
@@ -1908,7 +1921,7 @@ namespace AlloCine
                         using var reader = new StreamReader(stream);
                         var raw = reader.ReadToEnd();
 
-                        var o = JsonSerializer.Deserialize(raw, type);
+                        var o = JsonSerializer.Deserialize(raw, type, _serializationOptions);
                         return o;
                     }
                 }
@@ -1941,7 +1954,7 @@ namespace AlloCine
                         using var reader = new StreamReader(stream);
                         var raw = reader.ReadToEnd();
 
-                        var o = JsonSerializer.Deserialize(raw, type);
+                        var o = JsonSerializer.Deserialize(raw, type, _serializationOptions);
                         return o;
                     }
                 }
@@ -2078,5 +2091,36 @@ namespace AlloCine
 
         #endregion
 
+		private class IntToBoolConverter : JsonConverter<bool>
+		{
+			/// <inheritdoc />
+			public override bool Read(ref Utf8JsonReader reader, System.Type typeToConvert, JsonSerializerOptions options)
+				=> typeToConvert == typeof(bool) && reader.TokenType == JsonTokenType.Number
+					? reader.TryGetInt32(out var value) && value > 0
+					: reader.GetBoolean();
+
+			/// <inheritdoc />
+			public override void Write(Utf8JsonWriter writer, bool value, JsonSerializerOptions options)
+				=> throw new NotSupportedException("Not supported");
+		}
+
+		private class ValueTypeToStringConverter : JsonConverter<string>
+		{
+			/// <inheritdoc />
+			public override string Read(ref Utf8JsonReader reader, System.Type typeToConvert, JsonSerializerOptions options)
+				=> reader.TokenType switch
+				{
+					JsonTokenType.String => reader.GetString(),
+					JsonTokenType.Number => reader.GetDouble().ToString(CultureInfo.InvariantCulture),
+					JsonTokenType.False => "false",
+					JsonTokenType.True => "true",
+					JsonTokenType.Null => null,
+					_ => null
+				};
+
+			/// <inheritdoc />
+			public override void Write(Utf8JsonWriter writer, string value, JsonSerializerOptions options)
+				=> throw new NotSupportedException("Not supported");
+		}
     }
 }

@@ -19,6 +19,6 @@ namespace AlloCine
         public string Role { get; set; }
 
         [JsonPropertyName("isLeadActor")]
-        public string IsLeadActor { get; set; }
+		public bool IsLeadActor { get; set; }
     }
 }
