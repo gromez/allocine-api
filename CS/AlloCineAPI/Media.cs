@@ -10,6 +10,10 @@ namespace AlloCine
         [JsonPropertyName("class")]
         public string Class { get; set; }
 
+		public int Width { get; set; }
+
+		public int Height { get; set; }
+
         [JsonPropertyName("code")]
         public int Code { get; set; }
 

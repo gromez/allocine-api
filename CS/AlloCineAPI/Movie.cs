@@ -9,7 +9,7 @@ namespace AlloCine
     public class Movie
     {
         [JsonPropertyName("code")]
-        public int Code { get; set; }
+        public string Code { get; set; }
 
         [JsonPropertyName("movieType")]
         public MovieType MovieType { get; set; }
