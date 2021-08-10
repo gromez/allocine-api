@@ -9,4 +9,4 @@ $allocine = new Allocine(ALLOCINE_PARTNER_KEY, ALLOCINE_SECRET_KEY);
 
 $result = $allocine->get(27405);
 
-echo $result;
+var_dump($result);

@@ -39,7 +39,7 @@ class Allocine
         $response = curl_exec($ch);
         curl_close($ch);
 
-        return $response;
+        return json_decode($response);
     }
 
     private function getRandomUserAgent()
@@ -114,6 +114,24 @@ class Allocine
 
         // do the request
         $response = $this->_do_request('movie', $params);
+
+        return $response;
+    }
+
+    public function showtimelist($id, $date = null)
+    {
+        // build the params
+        $params = array(
+            'partner' => $this->_partner_key,
+            'theaters' => $id,
+            'format' => 'json',
+        );
+        if (!empty($date)) {
+            $params['date'] = $date;
+        }
+
+        // do the request
+        $response = $this->_do_request('showtimelist', $params);
 
         return $response;
     }
