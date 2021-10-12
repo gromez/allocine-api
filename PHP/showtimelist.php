@@ -7,6 +7,6 @@ define('ALLOCINE_USER_TOKEN', 'eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJpYXQiOjE1
 
 $allocine = new Allocine(ALLOCINE_TOKEN, ALLOCINE_USER_TOKEN);
 
-$result = $allocine->showtimelist('P0591', '2021-10-09');
+$result = $allocine->showtimelist('P0591', '2021-10-13');
 
 var_dump($result);

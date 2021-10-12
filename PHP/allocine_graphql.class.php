@@ -37,7 +37,7 @@ class Allocine
         $id = base64_encode("Theater:" . $id);
         $query = <<<QUERY
         query {
-          movieShowtimeList(theater: "$id", to: "$date", first: 100) {
+          movieShowtimeList(theater: "$id", from: "$date", first: 100) {
             totalCount,
             edges {
               node {
