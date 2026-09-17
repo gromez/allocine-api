@@ -18,7 +18,7 @@ class Allocine
         $query_url = $this->_api_url.'/'.$method;
 
         // new algo to build the query
-        $sed = date('Ymd');
+        $sed = @date('Ymd');
         $params['sed'] = $sed;
         $sig = base64_encode(sha1($method . http_build_query($params) . $this->_secret_key, true));
         $params['sig'] = $sig;
